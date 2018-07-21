@@ -1,10 +1,11 @@
-﻿using System;
+﻿#region MS Directives
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+#endregion
+
+#region Custom Directives
 using ThermometerAssignment.Interfaces;
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment.DataSource
 {
@@ -25,7 +26,6 @@ namespace ThermometerAssignment.DataSource
             {
                 listener.OnTemperatureChanged(temperature);
             }
-
         }
 
         public bool HasData()

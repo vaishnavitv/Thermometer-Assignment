@@ -1,8 +1,10 @@
-﻿using ThermometerAssignment.Subject;
+﻿#region Custom Directives
+using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment.Constraints
 {
-    class RaisedTemperatureConstraint : MaxTemperatureConstraint
+    class RaisedTemperatureConstraint : BoilingTemperatureConstraint
     {
         Temperature lastTemperature;
 
@@ -13,7 +15,7 @@ namespace ThermometerAssignment.Constraints
 
         public override bool IsTriggeredBoiling(Temperature temperature)
         {
-            if (temperature.CompareTo(lastTemperature) >= 0)
+            if (temperature >= lastTemperature)
             {
                 this.lastTemperature = temperature;
                 return base.IsTriggeredBoiling(temperature);

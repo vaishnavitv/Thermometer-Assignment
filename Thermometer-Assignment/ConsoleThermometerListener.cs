@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ThermometerAssignment.Interfaces;
-using ThermometerAssignment.Subject;
+﻿#region MS Directives
+using System;
+#endregion
 
 namespace ThermometerAssignment
 {
     class ConsoleThermometerListener : IThermometerListener
     {
-
         string clientName;
         public ConsoleThermometerListener(string clientName)
         {

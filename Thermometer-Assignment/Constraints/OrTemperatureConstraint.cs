@@ -1,6 +1,11 @@
-﻿using System.Collections.Generic;
+﻿#region MS Directives
+using System.Collections.Generic;
+#endregion
+
+#region Custom Directives
 using ThermometerAssignment.Interfaces;
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment.Constraints
 {

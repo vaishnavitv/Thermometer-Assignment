@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#region MS Directives
+using System;
+#endregion
+
+#region Custom Directives
 using ThermometerAssignment.Interfaces;
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment
 {
@@ -13,7 +14,7 @@ namespace ThermometerAssignment
         public void OnTemperatureChanged(Temperature temperature)
         {
             Console.WriteLine(new string('-', 80));        
-            Console.WriteLine("New Temperature Observed: " + temperature);
+            Console.WriteLine("Temperature Observed: " + temperature);
         }
     }
 }

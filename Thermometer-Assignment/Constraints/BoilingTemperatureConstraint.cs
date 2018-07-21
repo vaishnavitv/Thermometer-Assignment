@@ -1,19 +1,21 @@
-﻿using ThermometerAssignment.Interfaces;
+﻿#region Custom Directives
+using ThermometerAssignment.Interfaces;
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment.Constraints
 {
-    class MaxTemperatureConstraint : ITemperatureConstraint
+    class BoilingTemperatureConstraint : ITemperatureConstraint
     {
         protected readonly Temperature boilingTemperature;
-        public MaxTemperatureConstraint(Temperature boilingTemperature)
+        public BoilingTemperatureConstraint(Temperature boilingTemperature)
         {
             this.boilingTemperature = boilingTemperature;
         }
 
         public virtual bool IsTriggeredBoiling(Temperature temperature)
         {
-            return temperature.CompareTo(boilingTemperature) >= 0;
+            return temperature >= boilingTemperature;
         }
 
         public bool IsTriggeredFreezing(Temperature temperature)

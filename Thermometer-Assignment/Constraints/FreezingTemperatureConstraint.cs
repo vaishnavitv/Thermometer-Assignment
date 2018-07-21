@@ -1,12 +1,14 @@
-﻿using ThermometerAssignment.Interfaces;
+﻿#region Custom Directives
+using ThermometerAssignment.Interfaces;
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment.Constraints
 {
-    class MinTemperatureConstraint : ITemperatureConstraint
+    class FreezingTemperatureConstraint : ITemperatureConstraint
     {
         protected readonly Temperature freezingTemperature;
-        public MinTemperatureConstraint(Temperature freezingTemperature)
+        public FreezingTemperatureConstraint(Temperature freezingTemperature)
         {
             this.freezingTemperature = freezingTemperature;
         }
@@ -18,7 +20,7 @@ namespace ThermometerAssignment.Constraints
 
         public virtual bool IsTriggeredFreezing(Temperature temperature)
         {
-            return temperature.CompareTo(freezingTemperature) <= 0;
+            return temperature <= freezingTemperature;
         }
 
     }

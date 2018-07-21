@@ -1,9 +1,13 @@
-﻿using System;
+﻿#region MS Directives
+#endregion
+
+#region Custom Directives
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment.Constraints
 {
-    class LoweredTemperatureConstraint : MinTemperatureConstraint
+    class LoweredTemperatureConstraint : FreezingTemperatureConstraint
     {
         Temperature lastTemperature;
 
@@ -14,7 +18,7 @@ namespace ThermometerAssignment.Constraints
 
         public override bool IsTriggeredFreezing(Temperature temperature)
         {
-            if (temperature.CompareTo(lastTemperature) <= 0)
+            if (temperature <= lastTemperature)
             {
                 this.lastTemperature = temperature;
                 return base.IsTriggeredFreezing(temperature);

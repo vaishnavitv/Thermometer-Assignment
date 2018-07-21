@@ -1,11 +1,12 @@
-﻿using System;
+﻿#region MS Directives
+using System;
+#endregion
+
+#region Custom Directives
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ThermometerAssignment;
 using ThermometerAssignment.Interfaces;
 using ThermometerAssignment.Subject;
+#endregion
 
 namespace ThermometerAssignment
 {
